@@ -1,6 +1,6 @@
 {
-  "name": "SAST.Mathematic SIG",
-  "short_name": "SAST.Mathematic SIG",
+  "name": "SAST.Mathematics SIG",
+  "short_name": "SAST.Mathematics SIG",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
