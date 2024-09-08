@@ -1,0 +1,82 @@
+<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="几乎是每个接触 Haskell 的朋友的必然，我们会尝试对 Monad 给出一个解释，不为别的，只是因为 Monad 在 Haskell 中避无可避的重要性，让我们不得不对这么做"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://example.org/posts/a_kind_explanation_to_monad/"><meta property="og:site_name" content="SAST.Mathematics SIG"><meta property="og:title" content="A kind explanation to Monad(Haskell)"><meta property="og:description" content="几乎是每个接触 Haskell 的朋友的必然，我们会尝试对 Monad 给出一个解释，不为别的，只是因为 Monad 在 Haskell 中避无可避的重要性，让我们不得不对这么做"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:tag" content="Haskell"><meta property="article:tag" content="Type"><meta property="article:tag" content="Monad"><title>A kind explanation to Monad(Haskell) | SAST.Mathematics SIG</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=canonical href=https://example.org/posts/a_kind_explanation_to_monad/><link rel=stylesheet href=/book.min.309b7ed028807cdb68d8d61e26d609f48369c098dbf5e4d8c0dcf4cdf49feafc.css integrity="sha256-MJt+0CiAfNto2NYeJtYJ9INpwJjb9eTYwNz0zfSf6vw=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.7545db621b859fca3c4f21040717d759270f3349749ffabc9b021c0a67dfdfa4.js integrity="sha256-dUXbYhuFn8o8TyEEBxfXWScPM0l0n/q8mwIcCmff36Q=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>SAST.Mathematics SIG</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=/docs/contribute_helper/>贡献须知</a><ul><li><input type=checkbox id=section-f5e825ff929e2b2f77518c193983bdca class=toggle>
+<label for=section-f5e825ff929e2b2f77518c193983bdca class="flex justify-between"><a href=/docs/contribute_helper/documentation_writing_tutorials/>文档编写教程</a></label><ul><li><a href=/docs/contribute_helper/documentation_writing_tutorials/submit_documents_using_pr/>使用pull request提交文档</a><ul></ul></li><li><a href=/docs/contribute_helper/documentation_writing_tutorials/basic_markdown_syntax/>基础markdown语法</a></li><li><a href=/docs/contribute_helper/documentation_writing_tutorials/extend_markdown_syntax/>本站扩展语法</a></li></ul></li></ul></li></ul><ul><li><a href=/posts/>博客</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
+</label><strong>A kind explanation to Monad(Haskell)</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#简述-haskell-中的-monad>简述 Haskell 中的 Monad</a></li><li><a href=#从范畴到单子>从范畴到单子</a><ul><li><a href=#范畴>范畴</a></li><li><a href=#函子>函子</a></li><li><a href=#自然变换>自然变换</a></li><li><a href=#单子>单子</a></li></ul></li><li><a href=#单子haskell>单子(Haskell)</a></li><li><a href=#三大定律>三大定律</a></li><li><a href=#do-notion><code>do-notion</code></a></li><li><a href=#实例>实例</a></li></ul></nav></aside></header><article class="markdown book-post"><h1><a href=/posts/a_kind_explanation_to_monad/>A kind explanation to Monad(Haskell)</a></h1><div><a href=/categories/type-theory/>Type Theory</a></div><div><a href=/tags/haskell/>Haskell</a>,
+<a href=/tags/type/>Type</a>,
+<a href=/tags/monad/>Monad</a></div><p>几乎是每个接触 Haskell 的朋友的必然，我们会尝试对 <code>Monad</code> 给出一个解释，不为别的，只是因为 <code>Monad</code> 在 Haskell 中避无可避的重要性，让我们不得不对这么做</p><p>但想要对 <code>Monad</code> 进行解释并不是一个容易做到的事情，这个从范畴论当中提取出来的概念并不是那么的好解释，而且 <code>Monad(Pure Mathematics)</code> 和 <code>Monad(Haskell)</code> 之间亦有差距，不过经过变换后他们仍然保持了相同的本质。</p><h2 id=简述-haskell-中的-monad>简述 Haskell 中的 Monad
+<a class=anchor href=#%e7%ae%80%e8%bf%b0-haskell-%e4%b8%ad%e7%9a%84-monad>#</a></h2><p>我们知道，函数式编程有一个特点，纯函数特别的<strong>纯</strong>，这体现在，对于计算机这个状态机来说，这样的纯函数完全不会影响其余的环境，它就仿佛真的只是代入计算，映射出一个结果，不触碰其余一分一毫。</p><p>但这肯定不对啊，要这样的话，你根本不可能实现与操作系统交互这种行为，你总是需要告诉操作系统，告诉硬件去变换某种状态，只有纯函数这显然是不可能做到的</p><p><code>Monad</code> 于是横空出世了，在 Haskell，你即使只是一个 hello world 也必须使用到 <code>IO Monad</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-haskell data-lang=haskell><span style=display:flex><span><span style=color:#a6e22e>main</span> <span style=color:#f92672>::</span> <span style=color:#66d9ef>IO</span> ()
+</span></span><span style=display:flex><span><span style=color:#75715e>-- The type of main: IO () </span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>main</span> <span style=color:#f92672>=</span> putStrLn <span style=color:#e6db74>&#34;Hello, World!&#34;</span>
+</span></span></code></pre></div><p>在 Monad 内部，它能完成一些并不怎么纯的行为，比如读写文件描述符</p><h2 id=从范畴到单子>从范畴到单子
+<a class=anchor href=#%e4%bb%8e%e8%8c%83%e7%95%b4%e5%88%b0%e5%8d%95%e5%ad%90>#</a></h2><blockquote><p>无法避开的抽象概念，当你直面它的时候，事情才会变得合理</p></blockquote><h3 id=范畴>范畴
+<a class=anchor href=#%e8%8c%83%e7%95%b4>#</a></h3><p><img src=pics/category_defination.png alt="alt text"></p><h3 id=函子>函子
+<a class=anchor href=#%e5%87%bd%e5%ad%90>#</a></h3><p><img src=pics/functor_defination.png alt="alt text"></p><h3 id=自然变换>自然变换
+<a class=anchor href=#%e8%87%aa%e7%84%b6%e5%8f%98%e6%8d%a2>#</a></h3><p><img src=pics/natural_transformations.png alt="alt text"></p><h3 id=单子>单子
+<a class=anchor href=#%e5%8d%95%e5%ad%90>#</a></h3><p>上述都是一些相当简单的概念，我们接下来来看看 Monad 的数学定义：</p><p><img src=pics/monad_defination.png alt="alt text"></p><p>十分简单的构造，有一个自函子，将范畴中的一个成员映射成另一个，另一个还能再次映射。再配以两个自然变换，用以映射与展平</p><h2 id=单子haskell>单子(Haskell)
+<a class=anchor href=#%e5%8d%95%e5%ad%90haskell>#</a></h2><p>让我们来看看 Haskell 的单子定义</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-haskell data-lang=haskell><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#66d9ef>Functor</span> m <span style=color:#f92672>=&gt;</span> <span style=color:#66d9ef>Monad</span> m <span style=color:#66d9ef>where</span>
+</span></span><span style=display:flex><span>  return <span style=color:#f92672>::</span> a <span style=color:#f92672>-&gt;</span> m a
+</span></span><span style=display:flex><span>  (<span style=color:#f92672>&gt;&gt;=</span>)  <span style=color:#f92672>::</span> m a <span style=color:#f92672>-&gt;</span> (a <span style=color:#f92672>-&gt;</span> m b) <span style=color:#f92672>-&gt;</span> m b
+</span></span></code></pre></div><p>注意，Haskell 的单子首先是一个 <code>functor</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-haskell data-lang=haskell><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#66d9ef>Functor</span> (f <span style=color:#f92672>::</span> <span style=color:#f92672>*</span> <span style=color:#f92672>-&gt;</span> <span style=color:#f92672>*</span>) <span style=color:#66d9ef>where</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>fmap</span> <span style=color:#f92672>::</span> (a <span style=color:#f92672>-&gt;</span> b) <span style=color:#f92672>-&gt;</span> f a <span style=color:#f92672>-&gt;</span> f b
+</span></span></code></pre></div><p>我们要明确，我们讨论的这个范畴是Haskell所有类型所组成的一个类型范畴，在这种情况下 <code>m</code> 就是我们在上面数学定义中提到的那个 endofunctor ，而接下来剩下的 <code>return</code> 和 <code>>>=</code> 则是两个自然变换，前者称之为 <code>unit</code> 后者则称之为 <code>bind</code></p><p>但我们可以看到的是，这和数学上说的那两个自然变换并不是相同的，前面还好说，<code>unit</code> 即是那个
+<link rel=stylesheet href=/katex/katex.min.css><script defer src=/katex/katex.min.js></script><script defer src=/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><span>\( \eta \)
+</span>，但是这个 <code>bind</code> 和原本的定义有什么关系</p><p>这还没完，<code>Monad</code> 还有三大定律：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-haskell data-lang=haskell><span style=display:flex><span><span style=color:#a6e22e>return</span> x <span style=color:#f92672>&gt;&gt;=</span> f <span style=color:#f92672>=</span> f x
+</span></span><span style=display:flex><span><span style=color:#a6e22e>m</span> <span style=color:#f92672>&gt;&gt;=</span> return <span style=color:#f92672>=</span> m
+</span></span><span style=display:flex><span>(m <span style=color:#f92672>&gt;&gt;=</span> f) <span style=color:#f92672>&gt;&gt;=</span> g <span style=color:#f92672>=</span> m <span style=color:#f92672>&gt;&gt;=</span> (<span style=color:#a6e22e>\</span>x <span style=color:#f92672>-&gt;</span> f x <span style=color:#f92672>&gt;&gt;=</span> g)
+</span></span></code></pre></div><p>但不管怎么样，看起来好像和范畴论里那个单子是有关联的，事实上他俩确实是同一种定义，<code>bind</code> 则是经过一些转换可以得到 <span>\( \mu \)
+</span>(<code>join</code>)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-haskell data-lang=haskell><span style=display:flex><span><span style=color:#a6e22e>join</span> <span style=color:#f92672>::</span> <span style=color:#66d9ef>Monad</span> m <span style=color:#f92672>=&gt;</span> m (m a) <span style=color:#f92672>-&gt;</span> m a
+</span></span><span style=display:flex><span><span style=color:#a6e22e>join</span> x <span style=color:#f92672>=</span> x <span style=color:#f92672>&gt;&gt;=</span> id
+</span></span></code></pre></div><blockquote><p>我认为 <code>join</code> 是一个相当重要的概念，但Haskell 迂回的使用了 <code>bind</code>，似乎并不总是一个合适的行为，但它的意义会在 do 语句块中体现</p></blockquote><h2 id=三大定律>三大定律
+<a class=anchor href=#%e4%b8%89%e5%a4%a7%e5%ae%9a%e5%be%8b>#</a></h2><p>将数学语言翻译一下可以得到4条要求</p><ol><li>fmap g . return = return . g</li><li>fmap g . join = join . fmap (fmap g)</li><li>join . fmap join = join . join</li><li>join . return = id = join . fmap return</li></ol><p>Haskell 三大定律其实完全翻译自数学的定义以 <code>fmap</code> 和 <code>join</code> 作为原语，我们得到</p><pre tabindex=0><code> return x &gt;&gt;= f
+= join (fmap f (return x))
+= join (return (f x))
+= f x
+</code></pre><pre tabindex=0><code>  a &gt;&gt;= return
+= join (fmap return a)
+= a
+</code></pre><pre tabindex=0><code>  (a &gt;&gt;= f) &gt;&gt;= g
+= join (fmap g (join (fmap f a)))
+= join (join (fmap (fmap g) (fmap f a)))
+= join (fmap join (fmap (fmap g) (fmap f a)))
+= join (fmap (join . fmap g . f) a)
+= a &gt;&gt;= join . fmap g . f
+= a &gt;&gt;= \ x -&gt; join (fmap g (f x))
+= a &gt;&gt;= \ x -&gt; f x &gt;&gt;= g
+</code></pre><p>进一步可证</p><pre tabindex=0><code>  fmap f (return x)
+= return x &gt;&gt;= return . f
+= return (f x)
+</code></pre><pre tabindex=0><code>  fmap f (join a)
+= (a &gt;&gt;= id) &gt;&gt;= return . f
+= a &gt;&gt;= \ x -&gt; id x &gt;&gt;= return . f
+= a &gt;&gt;= \ x -&gt; x &gt;&gt;= return . f
+= a &gt;&gt;= fmap f
+= a &gt;&gt;= \ x -&gt; id (fmap f x)
+= a &gt;&gt;= \ x -&gt; return (fmap f x) &gt;&gt;= id
+= (a &gt;&gt;= return . fmap f) &gt;&gt;= id
+= join (fmap (fmap f) a)
+</code></pre><pre tabindex=0><code>  join (join a)
+= (a &gt;&gt;= id) &gt;&gt;= id
+= a &gt;&gt;= \ x -&gt; x &gt;&gt;= id
+= a &gt;&gt;= \ x -&gt; join x
+= a &gt;&gt;= \ x -&gt; return (join x) &gt;&gt;= id
+= (a &gt;&gt;= return . join) &gt;&gt;= id
+= join (fmap join a)
+</code></pre><pre tabindex=0><code>  join (return a)
+= return a &gt;&gt;= id
+= id a
+= a
+</code></pre><pre tabindex=0><code>  join (fmap return a)
+= (a &gt;&gt;= return . return) &gt;&gt;= id
+= a &gt;&gt;= \ x -&gt; return (return x) &gt;&gt;= id
+= a &gt;&gt;= \ x -&gt; return x
+= a &gt;&gt;= return
+= a
+</code></pre><h2 id=do-notion><code>do-notion</code>
+<a class=anchor href=#do-notion>#</a></h2><p>Monad 的作用不是处理副作用，而是以一种间接映射的方式去处理内容。Monad 允许你创建一种可以将一系列行为组合变成一种大的行为，这也是为什么他被成为单子</p><blockquote><p>有一个小故事，曾有人问我为什么我笃定单子叫 <code>dan'zi</code> (中文拼音)而不是 <code>shan'zi</code> ，其实正是因为这个原因</p></blockquote><p><code>do-notion</code> 只是一种语法糖，它直接对应着 Monad 本身的运算</p><pre tabindex=0><code>do { x }                 --&gt;  x
+do { let { y = v }; x }  --&gt;  let y = v in do { x }
+do { v &lt;- y; x }         --&gt;  y &gt;&gt;= \v -&gt; do { x }
+do { y; x }              --&gt;  y &gt;&gt;= \_ -&gt; do { x }
+</code></pre><p><img src=pics/do_block_requirements.png alt="alt text"></p><h2 id=实例>实例
+<a class=anchor href=#%e5%ae%9e%e4%be%8b>#</a></h2><p>//TO DO</p><hr><p>作者：Github @feipiao594</p><p>参考文献：</p><p>[1]. 范畴论 维基百科 <a href=https://en.wikipedia.org/wiki/Category_theory>https://en.wikipedia.org/wiki/Category_theory</a></p><p>[2]. 单子 维基百科 <a href=https://en.wikipedia.org/wiki/Monad_%28category_theory%29>https://en.wikipedia.org/wiki/Monad_(category_theory)</a></p><p>[3]. <a href=https://stackoverflow.com/questions/78867164/how-to-understand-the-in-haskells-do-notation-with-an-uncommon-impleme>https://stackoverflow.com/questions/78867164/how-to-understand-the-in-haskells-do-notation-with-an-uncommon-impleme</a></p><p>[4]. <a href=https://wiki.haskell.org/Category_theory/Monads#Monads_in_Haskell>https://wiki.haskell.org/Category_theory/Monads#Monads_in_Haskell</a></p><p>[5]. <a href=https://en.m.wikibooks.org/wiki/Haskell/Category_theory>https://en.m.wikibooks.org/wiki/Haskell/Category_theory</a></p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#简述-haskell-中的-monad>简述 Haskell 中的 Monad</a></li><li><a href=#从范畴到单子>从范畴到单子</a><ul><li><a href=#范畴>范畴</a></li><li><a href=#函子>函子</a></li><li><a href=#自然变换>自然变换</a></li><li><a href=#单子>单子</a></li></ul></li><li><a href=#单子haskell>单子(Haskell)</a></li><li><a href=#三大定律>三大定律</a></li><li><a href=#do-notion><code>do-notion</code></a></li><li><a href=#实例>实例</a></li></ul></nav></div></aside></main></body></html>
