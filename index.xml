@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on SAST.Mathematics SIG</title><link>https://example.org/</link><description>Recent content in Introduction on SAST.Mathematics SIG</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://example.org/menu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/menu/</guid><description>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on SAST.Mathematics SIG</title><link>https://example.org/</link><description>Recent content in Introduction on SAST.Mathematics SIG</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 24 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml"/><item><title>A kind explanation to Monad(Haskell)</title><link>https://example.org/posts/a_kind_explanation_to_monad/</link><pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate><guid>https://example.org/posts/a_kind_explanation_to_monad/</guid><description>&lt;p>几乎是每个接触 Haskell 的朋友的必然，我们会尝试对 &lt;code>Monad&lt;/code> 给出一个解释，不为别的，只是因为 &lt;code>Monad&lt;/code> 在 Haskell 中避无可避的重要性，让我们不得不对这么做&lt;/p></description></item><item><title>一份抽象的类型抽象指北</title><link>https://example.org/posts/an_abstract_guide_to_type_abstraction/</link><pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate><guid>https://example.org/posts/an_abstract_guide_to_type_abstraction/</guid><description>&lt;blockquote>
+&lt;p>内存本非数，类型亦无形。编译不报错，运行未必行。&lt;/p>
+&lt;/blockquote>
+&lt;p>程序设计常常涉及类型的抽象。你是否在一些库的文档中看过各种类型，却觉得它们过于抽象？动辄几十几百个成员的枚举类型，总是报错的类型约束，永远设计不出的 trait，以及程序运行时无尽的 panic……看完今天的介绍，不说你是醍醐灌顶，至少也算得上是毫无收获。&lt;/p></description></item><item><title>Subtyping variance and its application</title><link>https://example.org/posts/subtyping_variance_and_its_application/</link><pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate><guid>https://example.org/posts/subtyping_variance_and_its_application/</guid><description>&lt;p>子类型型变及其应用&lt;/p></description></item><item><title/><link>https://example.org/menu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/menu/</guid><description>&lt;ul>
 &lt;li>&lt;a href="https://example.org/docs/contribute_helper/">&lt;strong>贡献须知&lt;/strong>&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://example.org/docs/contribute_helper/documentation_writing_tutorials/">本站文档编写教程&lt;/a>
 &lt;ul>
@@ -7,10 +10,7 @@
 &lt;!-- raw HTML omitted -->&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>A kind explanation to Monad(Haskell)</title><link>https://example.org/posts/a_kind_explanation_to_monad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/posts/a_kind_explanation_to_monad/</guid><description>&lt;p>几乎是每个接触 Haskell 的朋友的必然，我们会尝试对 &lt;code>Monad&lt;/code> 给出一个解释，不为别的，只是因为 &lt;code>Monad&lt;/code> 在 Haskell 中避无可避的重要性，让我们不得不对这么做&lt;/p></description></item><item><title>Subtyping variance and its application</title><link>https://example.org/posts/subtyping_variance_and_its_application/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/posts/subtyping_variance_and_its_application/</guid><description>&lt;p>子类型型变及其应用&lt;/p></description></item><item><title>一份抽象的类型抽象指北</title><link>https://example.org/posts/an_abstract_guide_to_type_abstraction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/posts/an_abstract_guide_to_type_abstraction/</guid><description>&lt;blockquote>
-&lt;p>内存本非数，类型亦无形。编译不报错，运行未必行。&lt;/p>
-&lt;/blockquote>
-&lt;p>程序设计常常涉及类型的抽象。你是否在一些库的文档中看过各种类型，却觉得它们过于抽象？动辄几十几百个成员的枚举类型，总是报错的类型约束，永远设计不出的 trait，以及程序运行时无尽的 panic……看完今天的介绍，不说你是醍醐灌顶，至少也算得上是毫无收获。&lt;/p></description></item><item><title>基础markdown语法</title><link>https://example.org/docs/contribute_helper/documentation_writing_tutorials/basic_markdown_syntax/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/docs/contribute_helper/documentation_writing_tutorials/basic_markdown_syntax/</guid><description>&lt;h1 id="基础markdown语法">
+&lt;/ul></description></item><item><title>基础markdown语法</title><link>https://example.org/docs/contribute_helper/documentation_writing_tutorials/basic_markdown_syntax/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/docs/contribute_helper/documentation_writing_tutorials/basic_markdown_syntax/</guid><description>&lt;h1 id="基础markdown语法">
  基础markdown语法
  &lt;a class="anchor" href="#%e5%9f%ba%e7%a1%80markdown%e8%af%ad%e6%b3%95">#&lt;/a>
 &lt;/h1>
@@ -26,7 +26,18 @@
 &lt;p>首先， Markdown 用于在纯文本文档中添加格式化元素，这意味着它只是将一份纯文本文档，加以一些标记使得其中的一部分内容会被特殊化的处理而已&lt;/p>
 &lt;p>在使用 Markdown 格式书写时，文本内容存储在带有 &lt;code>.md&lt;/code> 或 &lt;code>.markdown&lt;/code> 扩展名的纯文本文件中&lt;/p>
 &lt;blockquote>
-&lt;p>例如 &lt;code>test.md&lt;/code> ，你可以在里面像 &lt;code>.txt&lt;/code> 一样书写文字，比如你写了一篇文章，标题&lt;code>title&lt;/code>独占一行，在 Markdown 中，你可以将 &lt;code>title&lt;/code> 改为 &lt;code># title&lt;/code> ，保存后，将该文本文件交由 arkdown 处理器（也通常称为“解析器”或“实现”）的东西将获取到的 Markdown 格式的文本输出为 HTML 格式，接着你就会发现你的 &lt;code># title&lt;/code> 会被其对应成为一个一级标题&lt;/p></description></item><item><title>本站扩展语法</title><link>https://example.org/docs/contribute_helper/documentation_writing_tutorials/extend_markdown_syntax/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/docs/contribute_helper/documentation_writing_tutorials/extend_markdown_syntax/</guid><description>&lt;h1 id="本站扩展语法shortcodes">
+&lt;p>例如 &lt;code>test.md&lt;/code> ，你可以在里面像 &lt;code>.txt&lt;/code> 一样书写文字，比如你写了一篇文章，标题&lt;code>title&lt;/code>独占一行，在 Markdown 中，你可以将 &lt;code>title&lt;/code> 改为 &lt;code># title&lt;/code> ，保存后，将该文本文件交由 arkdown 处理器（也通常称为“解析器”或“实现”）的东西将获取到的 Markdown 格式的文本输出为 HTML 格式，接着你就会发现你的 &lt;code># title&lt;/code> 会被其对应成为一个一级标题&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="工具推荐">
+ 工具推荐
+ &lt;a class="anchor" href="#%e5%b7%a5%e5%85%b7%e6%8e%a8%e8%8d%90">#&lt;/a>
+&lt;/h2>
+&lt;p>书写 Markdown 可以使用 &lt;a href="https://typora.io/">Typora&lt;/a> ，同样被推荐的是 vscode 的 &lt;a href="">&lt;strong>markdown all in one&lt;/strong>&lt;/a> 插件&lt;/p>
+&lt;h2 id="基本语法">
+ 基本语法
+ &lt;a class="anchor" href="#%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95">#&lt;/a>
+&lt;/h2>
+&lt;p>到了正片，接下来是简单的介绍基本语法的时间&lt;/p></description></item><item><title>本站扩展语法</title><link>https://example.org/docs/contribute_helper/documentation_writing_tutorials/extend_markdown_syntax/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/docs/contribute_helper/documentation_writing_tutorials/extend_markdown_syntax/</guid><description>&lt;h1 id="本站扩展语法shortcodes">
  本站扩展语法——shortcodes
  &lt;a class="anchor" href="#%e6%9c%ac%e7%ab%99%e6%89%a9%e5%b1%95%e8%af%ad%e6%b3%95shortcodes">#&lt;/a>
 &lt;/h1>
@@ -42,4 +53,82 @@
 &lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tpl" data-lang="tpl">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">{{&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#a6e22e">button&lt;/span> &lt;span style="color:#a6e22e">relref&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/&amp;#34;&lt;/span> &lt;span style="color:#f92672">[&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;...&amp;#34;&lt;/span>&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#75715e">}}&lt;/span>回到首页&lt;span style="color:#75715e">{{&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#a6e22e">button&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#75715e">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">{{&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#a6e22e">button&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://github.com/SAST-Mathematics-SIG&amp;#34;&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#75715e">}}&lt;/span>前往SIG的GITHUB组织&lt;span style="color:#75715e">{{&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#a6e22e">button&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#75715e">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
+
+
+
+ 
+
+&lt;a href="https://example.org/" class="book-btn">
+ 回到首页
+&lt;/a>
+
+
+
+
+ 
+ 
+
+
+&lt;a href="https://github.com/SAST-Mathematics-SIG" target="_blank" rel="noopener" class="book-btn">
+ 前往SIG的GITHUB组织
+&lt;/a>
+&lt;/p>
+&lt;h2 id="细节展示">
+ 细节展示
+ &lt;a class="anchor" href="#%e7%bb%86%e8%8a%82%e5%b1%95%e7%a4%ba">#&lt;/a>
+&lt;/h2>
+&lt;p>细节展示(Details)是一个展开的栏目，可以隐藏一些信息&lt;/p>
+&lt;h3 id="例子-1">
+ 例子
+ &lt;a class="anchor" href="#%e4%be%8b%e5%ad%90-1">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tpl" data-lang="tpl">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">{{&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#a6e22e">details&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Title&amp;#34;&lt;/span> &lt;span style="color:#f92672">[&lt;/span>&lt;span style="color:#a6e22e">open&lt;/span>&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#75715e">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>### 内容
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>细节展示(Details)是...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">{{&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#a6e22e">details&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#75715e">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tpl" data-lang="tpl">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">{{&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#a6e22e">details&lt;/span> &lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Title&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">open&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#75715e">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>### 内容
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>细节展示(Details)是...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">{{&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#a6e22e">details&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#75715e">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;details open>&lt;summary>Title&lt;/summary>
+ &lt;div class="markdown-inner">
+ &lt;h3 id="内容">
+ 内容
+ &lt;a class="anchor" href="#%e5%86%85%e5%ae%b9">#&lt;/a>
+&lt;/h3>
+&lt;p>细节展示(Details)是&amp;hellip;&lt;/p>
+ &lt;/div>
+&lt;/details>
+
+&lt;h2 id="分列">
+ 分列
+ &lt;a class="anchor" href="#%e5%88%86%e5%88%97">#&lt;/a>
+&lt;/h2>
+&lt;p>分列(Columns)有助于组织简短的文字，使之排版更加清晰可读&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>{{&amp;lt; &lt;span style="color:#f92672">columns&lt;/span> &amp;gt;}} &lt;span style="color:#75715e">&amp;lt;!-- begin columns block --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Left Content
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Lorem markdownum insigne...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">---&lt;/span>&amp;gt; &lt;span style="color:#75715e">&amp;lt;!-- magic separator, between columns --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Mid Content
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Lorem markdownum insigne...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">---&lt;/span>&amp;gt; &lt;span style="color:#75715e">&amp;lt;!-- magic separator, between columns --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Right Content
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Lorem markdownum insigne...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{&amp;lt; /&lt;span style="color:#f92672">columns&lt;/span> &amp;gt;}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="例子-2">
+ 例子
+ &lt;a class="anchor" href="#%e4%be%8b%e5%ad%90-2">#&lt;/a>
+&lt;/h3>
+&lt;div class="book-columns flex flex-wrap">
+
+ &lt;div class="flex-even markdown-inner">
+ &lt;h1 id="左段落">
+ 左段落
+ &lt;a class="anchor" href="#%e5%b7%a6%e6%ae%b5%e8%90%bd">#&lt;/a>
+&lt;/h1>
+&lt;p>左段落内容&amp;hellip;&lt;/p></description></item></channel></rss>
